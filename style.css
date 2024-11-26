@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(0, 59, 69);
+}
+
+.gallerywrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 11% auto;
+}
+
+#backbtn,
+#nextbtn {
+    width: 50px;
+    margin: 0 12px;
+    cursor: pointer;
+}
+
+.gellery {
+    width: 900px;
+    display: flex;
+    overflow-x: scroll;
+
+}
+
+.gellery::-webkit-scrollbar {
+    display: none;
+}
+
+.gellery div {
+    width: 100%;
+    display: grid;
+    grid-gap: 30px;
+    padding: 10px;
+    grid-template-columns: auto auto auto;
+    flex: none;
+}
+
+.gellery div img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.7s;
+    filter: grayscale(100);
+}
+
+.gellery div img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}

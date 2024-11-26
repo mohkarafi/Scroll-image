@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Horizontal Scrolling</title>
+</head>
+
+<body>
+    <div class="gallerywrap">
+        <img src="images 4/back.png" id="backbtn">
+
+        <div class="gellery">
+            <div>
+                <span><img src="images 4/image-1.png"></span>
+                <span><img src="images 4/image-2.png"></span>
+                <span><img src="images 4/image-3.png"></span>
+
+            </div>
+            <div>
+                <span><img src="images 4/image-4.png"></span>
+                <span><img src="images 4/image-5.png"></span>
+                <span><img src="images 4/image-6.png"></span>
+
+            </div>
+        </div>
+        <img src="images 4/next.png" id="nextbtn">
+    </div>
+
+    <script>
+        let Scrollcontent = document.querySelector('.gellery')
+        let backbtn = document.getElementById('backbtn')
+        let nextbtn = document.getElementById('nextbtn')
+
+        Scrollcontent.addEventListener('wheel', (evt) => {
+            evt.preventDefault();
+            Scrollcontent.scrollLeft += evt.deltaY;
+        });
+
+        nextbtn.addEventListener('click', () => {
+            Scrollcontent.style.scrollBehavior = "smooth"
+            Scrollcontent.scrollLeft += 270 + (30)
+        });
+
+        backbtn.addEventListener('click', () => {
+            Scrollcontent.style.scrollBehavior = "smooth"
+            Scrollcontent.scrollLeft -= 270 + (30)
+        });
+
+
+    </script>
+</body>
+
+</html>
